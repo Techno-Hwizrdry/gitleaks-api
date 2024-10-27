@@ -16,7 +16,7 @@ def get_settings() -> Settings:
 async def root(settings: Annotated[Settings, Depends(get_settings)]) -> Dict:
     return {"message": f"Hello World {settings}"}
 
-@app.post("/detect")
+@app.post("/detection")
 async def detect(
     settings: Annotated[Settings, Depends(get_settings)],
     repo: str = Body(...)) -> Dict:
